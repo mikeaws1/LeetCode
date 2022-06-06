@@ -12,18 +12,18 @@ class SolutionTest {
     @Test
     public void testSolution() {
 
-        int[] nums = {13, 8, 7, 11, 23, 89, 22, 40, 68, 1, 34};
+        long[] nums = {13, 8, 7, 11, 23, 89, 22, 40, 68, 1, 34};
         var target = 63;
 
-        assertArrayEquals(new int[]{4, 7}, solution.twoSum(nums, target));
+        assertArrayEquals(new long[]{4, 7}, solution.twoSum(nums, target));
     }
 
     @Test
     public void testSolutionNotSameElementTwice() {
-        int[] nums = {13, 8, 7, 11, 23, 89, 22, 40, 68, 1, 34};
+        long[] nums = {13, 8, 7, 11, 23, 89, 22, 40, 68, 1, 34};
         var target = 44;
 
-        assertArrayEquals(new int[0], solution.twoSum(nums, target));
+        assertArrayEquals(new long[0], solution.twoSum(nums, target));
 
     }
 }
