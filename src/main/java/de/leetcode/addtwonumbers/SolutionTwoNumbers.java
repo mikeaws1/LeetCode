@@ -1,10 +1,10 @@
-package de.leetcode.addTwoNumbers;
+package de.leetcode.addtwonumbers;
 
 public class SolutionTwoNumbers {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
-        if (l2 == null && l2 == null) {
+        if (l1 == null && l2 == null) {
             return null;
         }
         if (l1 == null) {
