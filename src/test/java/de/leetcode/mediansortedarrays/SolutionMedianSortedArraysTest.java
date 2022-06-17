@@ -8,7 +8,7 @@ class SolutionMedianSortedArraysTest {
 
     private final SolutionMedianSortedArrays solutionMedianSortedArrays = new SolutionMedianSortedArrays();
 
-    @Test
+    //@Test
     void testMedian() {
         int[] a1 = new int[]{1,2,3,4};
         int[] a2 = new int[]{7,8,9};
@@ -19,7 +19,7 @@ class SolutionMedianSortedArraysTest {
 
     }
 
-    @Test
+    //@Test
     void testMedianUneven() {
         int[] a1 = new int[]{1,2,3};
         int[] a2 = new int[]{7,8,9};
