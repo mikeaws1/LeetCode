@@ -6,56 +6,30 @@ import org.junit.jupiter.api.Test;
 
 public class RomanToIntegerTest {
 
-    public RomanToInteger romanToInteger = new RomanToInteger();
-	
-    @Test
-    public void testValue() {
+    private RomanToInteger romanToInteger = new RomanToInteger();
 
+    public static Object[][] numbersProvider() {
 
-        String value = "III";
-
-        int result = romanToInteger.romanToInt(value);
-
-        assertEquals(3, result);
+        return new Object[][] {
+                { "III", 3 },
+                { "VII", 7 },
+                { "IV", 4 },
+                { "MCMXCIV", 1994 },
+                { "LVIII", 58 },
+                { "MMMDCCCXXV", 3825 }
+        };
     }
 
     @Test
-    public void testValue2() {
+    public void testValues() {
 
-        String value = "VII";
+        Object[][] values = numbersProvider();
 
-        int result = romanToInteger.romanToInt(value);
+        for (Object[] o : values) {
 
-        assertEquals(7, result);
+            int result = romanToInteger.romanToInt((String) o[0]);
+            assertEquals(o[1], result);
+        }
     }
 
-    @Test
-    public void testValue3() {
-
-        String value = "IV";
-
-        int result = romanToInteger.romanToInt(value);
-
-        assertEquals(4, result);
-    }
-
-    @Test
-    public void testValue4() {
-
-        String value = "MCMXCIV";
-
-        int result = romanToInteger.romanToInt(value);
-
-        assertEquals(1994, result);
-    }
-
-    @Test
-    public void testValue5() {
-
-        String value = "LVIII";
-
-        int result = romanToInteger.romanToInt(value);
-
-        assertEquals(58, result);
-    }
 }
