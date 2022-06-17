@@ -25,9 +25,13 @@ public class ReverseInteger {
             }
         }
 
-        for (int i = 0; i < list.size(); i++) {
-            int exp = list.size() - i - 1;
-            reverseValue += (list.get(i) * Util.power(exp));
+        final int size = list.size();
+
+        for (int i = 0; i < size; i++) {
+            final int exp = size - i - 1;
+            final int v = list.get(i);
+
+            reverseValue += (v * Util.power(exp));
         }
 
         return reverseValue;

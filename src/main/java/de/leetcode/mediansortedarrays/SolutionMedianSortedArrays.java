@@ -8,7 +8,7 @@ public class SolutionMedianSortedArrays {
         final int n1 = nums1.length;
         final int n2 = nums2.length;
 
-        int[] mergedArray = new int[nums1.length + nums2.length];
+        //int[] mergedArray = new int[nums1.length + nums2.length];
 
         if (nums1[n1 - 1] > nums2[n2 - 1]) {
 
