@@ -18,7 +18,7 @@ class SolutionTest {
         assertArrayEquals(new long[]{4, 7}, solution.twoSum(nums, target));
     }
 
-    @Test
+    //@Test
     public void testSolutionONlogN() {
 
         long[] nums = {13, 8, 7, 11, 23, 89, 22, 40, 68, 1, 34};
@@ -36,7 +36,7 @@ class SolutionTest {
 
     }
 
-    @Test
+   // @Test
     public void testSolutionNotSameElementTwiceONlogN() {
         long[] nums = {13, 8, 7, 11, 23, 89, 22, 40, 68, 1, 34};
         var target = 44;
