@@ -19,11 +19,29 @@ class SolutionTest {
     }
 
     @Test
+    public void testSolutionONlogN() {
+
+        long[] nums = {13, 8, 7, 11, 23, 89, 22, 40, 68, 1, 34};
+        var target = 63;
+
+        assertArrayEquals(new long[]{4, 7}, solution.twoSumLogN(nums, target));
+    }
+
+    @Test
     public void testSolutionNotSameElementTwice() {
         long[] nums = {13, 8, 7, 11, 23, 89, 22, 40, 68, 1, 34};
         var target = 44;
 
         assertArrayEquals(new long[0], solution.twoSum(nums, target));
+
+    }
+
+    @Test
+    public void testSolutionNotSameElementTwiceONlogN() {
+        long[] nums = {13, 8, 7, 11, 23, 89, 22, 40, 68, 1, 34};
+        var target = 44;
+
+        assertArrayEquals(new long[0], solution.twoSumLogN(nums, target));
 
     }
 }
