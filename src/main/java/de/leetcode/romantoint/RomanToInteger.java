@@ -3,6 +3,8 @@ package  de.leetcode.romantoint;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.xml.crypto.Data;
+
 public class RomanToInteger {
 
    private static Map<Character, Integer> map = new HashMap<>();
@@ -17,6 +19,12 @@ public class RomanToInteger {
         map.put('D', 500);
         map.put('M', 1000);
 
+    }
+
+    private DataProvider provider;
+
+    public RomanToInteger(DataProvider provider) {
+        this.provider = provider;
     }
 
     public int romanToInt(String s) {
