@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import de.leetcode.util.ListNode;
+
 class SolutionTwoNumbersTest {
 
     private final SolutionTwoNumbers solutionTwoNumbers = new SolutionTwoNumbers();

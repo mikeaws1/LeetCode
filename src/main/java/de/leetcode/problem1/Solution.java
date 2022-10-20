@@ -44,11 +44,10 @@ public class Solution {
 
         long[] a = twoSumLogN(Arrays.copyOfRange(nums, 0, pivot), target);
         long[] b = twoSumLogN(Arrays.copyOfRange(nums, pivot, nums.length + 1), target);
-        
+
         if (a.length > 0) {
             return a;
-        }
-        else if(b.length> 0) {
+        } else if (b.length > 0) {
             return b;
         }
 
