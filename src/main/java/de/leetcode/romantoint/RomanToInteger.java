@@ -59,6 +59,10 @@ public class RomanToInteger {
     }
     public List<Integer> romanToInt() {
 
+        if (provider == null) {
+            return new ArrayList<>();
+        }
+
         final List<String> romanIntsList = provider.getDataBatch();
         final List<Integer> result = new ArrayList<>();
 
