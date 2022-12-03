@@ -32,7 +32,7 @@ public class IntegerToRoman {
 
         final StringBuilder builder = new StringBuilder();
 
-        for (int j = 0; j < MAP.size(); j++)  {
+        for (int j = 0; j < MAP.size(); j++) {
 
             final Pair pair = MAP.get(j);
 
@@ -47,8 +47,7 @@ public class IntegerToRoman {
                     final Pair previousPair = MAP.get(j - 1);
                     builder.append(romanNumber);
                     builder.append(previousPair.letter());
-                }
-                else {
+                } else {
                     builder.append(StringUtils.repeat(romanNumber, rep));
                 }
                 num -= (rep * i);

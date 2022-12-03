@@ -1,20 +1,20 @@
 package de.leetcode.integertoroman;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class IntegerToRomanTest {
 
     private final IntegerToRoman integerToRoman = new IntegerToRoman();
 
     private Object[][] data() {
-        return new Object[][] {
-                { 3, "III" },
-                { 4, "IV" },
-                { 58, "LVIII" },
-                { 1984, "MCMLXXXIV"},
-                { 3825, "MMMDCCCXXV" }
+        return new Object[][]{
+                {3, "III"},
+                {4, "IV"},
+                {58, "LVIII"},
+                {1984, "MCMLXXXIV"},
+                {3825, "MMMDCCCXXV"}
         };
     }
 
