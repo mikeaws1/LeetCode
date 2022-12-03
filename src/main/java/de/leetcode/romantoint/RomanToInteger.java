@@ -27,38 +27,49 @@ public class RomanToInteger {
         this.provider = provider;
     }
 
+
+    public int romanToInt(String s) {
+        int value = 0;
+        final int strLen = s.length();
+
+        for (int i = 0; i < strLen; i++) {
+
+            char c = s.charAt(i);
+            int sign = 1;
+
+            char next = ' ';
+
+            if (i + 1 < strLen) {
+                next = s.charAt(i + 1);
+            }
+
+            if (c == 'I' && (next == 'V' || next == 'X')) {
+                sign = -1;
+            } else if (c == 'X' && (next == 'L' || next == 'C')) {
+                sign = -1;
+            } else if (c == 'C' && (next == 'D' || next == 'M')) {
+                sign = -1;
+            }
+
+            value += (sign * MAP.getOrDefault(c, 0));
+        }
+
+        return value;
+
+    }
     public List<Integer> romanToInt() {
 
-        int value = 0;
+        if (provider == null) {
+            return new ArrayList<>();
+        }
+
         final List<String> romanIntsList = provider.getDataBatch();
         final List<Integer> result = new ArrayList<>();
 
         for (String s: romanIntsList) {
-            final int strLen = s.length();
-                for (int i = 0; i < strLen; i++) {
-
-                    char c = s.charAt(i);
-                    int sign = 1;
-
-                    char next = ' ';
-
-                    if (i + 1 < strLen) {
-                        next = s.charAt(i + 1);
-                    }
-
-                    if (c == 'I' && (next == 'V' || next == 'X')) {
-                        sign = -1;
-                    } else if (c == 'X' && (next == 'L' || next == 'C')) {
-                        sign = -1;
-                    } else if (c == 'C' && (next == 'D' || next == 'M')) {
-                        sign = -1;
-                    }
-
-                    value += (sign * MAP.getOrDefault(c, 0));
-                }
-
-                result.add(value);
-            }
+            int value = romanToInt(s);
+            result.add(value);
+         }
 
         return result;
 

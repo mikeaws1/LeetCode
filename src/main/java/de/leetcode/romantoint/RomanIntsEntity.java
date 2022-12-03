@@ -10,8 +10,6 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "romanintegers")
-@Getter
-@Setter
 public class RomanIntsEntity {
 
    @Id
@@ -20,4 +18,19 @@ public class RomanIntsEntity {
    @Column
    private String value;
 
+   public String getValue() {
+      return value;
+   }
+
+   public void setValue(String value) {
+      this.value = value;
+   }
+
+   public int getId() {
+      return id;
+   }
+
+   public void setId(int id) {
+      this.id = id;
+   }
 }
