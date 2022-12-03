@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Slf4j
 public class FileDataProvider implements DataProvider {
 
     public static final int MAX_DATA = 10;

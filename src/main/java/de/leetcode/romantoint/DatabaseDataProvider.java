@@ -8,8 +8,7 @@ import org.hibernate.cfg.Configuration;
 import java.util.ArrayList;
 import java.util.List;
 
-@Slf4j
-public class DatabaseDataProvider implements DataProvider{
+public class DatabaseDataProvider implements DataProvider {
 
     private final String jdbcURL;
 
@@ -51,8 +50,7 @@ public class DatabaseDataProvider implements DataProvider{
                 RomanIntsEntity entity = session.get(RomanIntsEntity.class, i);
                 data.add(entity.getValue());
             }
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
         }
 
         return data;

@@ -1,21 +1,28 @@
 package de.leetcode.integertoroman;
 
-import java.util.HashMap;
+import de.leetcode.util.Pair;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class IntegerToRoman {
-    
-   private static Map<Integer, Character> map = new HashMap<>();
+
+
+
+    private final static List<Pair> MAP = new ArrayList<>();
+
+
     static {
-
-        map.put(1, 'I');
-        map.put(5, 'V');
-        map.put(10,'X');
-        map.put(50, 'L');
-        map.put(100, 'C');
-        map.put(500, 'D');
-        map.put(1000,'M');
-
+        MAP.add(new Pair(1000, 'M'));
+        MAP.add(new Pair(500, 'D'));
+        MAP.add(new Pair(100, 'C'));
+        MAP.add(new Pair(50, 'L'));
+        MAP.add(new Pair(10, 'X'));
+        MAP.add(new Pair(5, 'V'));
+        MAP.add(new Pair(1, 'I'));
     }
 
 
@@ -23,19 +30,25 @@ public class IntegerToRoman {
 
         final StringBuilder builder = new StringBuilder();
 
-        while(true) {
-            for (int i: map.keySet()) {
+        for (int j = 0; j < MAP.size(); j++)  {
 
-                if (num / i == 0) {
+            final Pair pair = MAP.get(j);
 
+            final int i = pair.value();
+            final char romanNumber = pair.letter();
+
+            if (num / i > 0) {
+                final int rep = num / i;
+                if (rep > 3) {
+                    final Pair previousPair = MAP.get(j - 1);
+                    builder.append(romanNumber);
+                    builder.append(previousPair.letter());
                 }
-
-                if (num == 0)
-                    break;
-
+                else {
+                    builder.append(StringUtils.repeat(romanNumber, rep));
+                    num -= (rep * i);
+                }
             }
-            
-            break;
         }
 
         return builder.toString();
