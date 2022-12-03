@@ -8,7 +8,6 @@ import java.util.List;
 
 public class IntegerToRoman {
 
-
     private final static List<Pair> MAP = new ArrayList<>();
 
 
@@ -35,7 +34,9 @@ public class IntegerToRoman {
             final char romanNumber = pair.letter();
 
             if (num / i > 0) {
+
                 final int rep = num / i;
+
                 if (rep > 3) {
                     final Pair previousPair = MAP.get(j - 1);
                     builder.append(romanNumber);
