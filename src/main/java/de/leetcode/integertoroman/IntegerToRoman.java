@@ -10,15 +10,21 @@ public class IntegerToRoman {
 
     private final static List<Pair> MAP = new ArrayList<>();
 
-
     static {
-        MAP.add(new Pair(1000, 'M'));
-        MAP.add(new Pair(500, 'D'));
-        MAP.add(new Pair(100, 'C'));
-        MAP.add(new Pair(50, 'L'));
-        MAP.add(new Pair(10, 'X'));
-        MAP.add(new Pair(5, 'V'));
-        MAP.add(new Pair(1, 'I'));
+        MAP.add(new Pair(1000, "M"));
+        MAP.add(new Pair(900, "CM"));
+        MAP.add(new Pair(500, "D"));
+        MAP.add(new Pair(400, "CD"));
+        MAP.add(new Pair(100, "C"));
+        MAP.add(new Pair(90, "XC"));
+        MAP.add(new Pair(50, "L"));
+        MAP.add(new Pair(40, "XL"));
+        MAP.add(new Pair(10, "X"));
+        MAP.add(new Pair(5, "V"));
+        MAP.add(new Pair(4, "IV"));
+        MAP.add(new Pair(1, "I"));
+
+
     }
 
 
@@ -31,7 +37,7 @@ public class IntegerToRoman {
             final Pair pair = MAP.get(j);
 
             final int i = pair.value();
-            final char romanNumber = pair.letter();
+            final String romanNumber = pair.letter();
 
             if (num / i > 0) {
 

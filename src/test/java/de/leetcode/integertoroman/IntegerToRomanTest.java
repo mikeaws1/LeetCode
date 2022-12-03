@@ -13,6 +13,7 @@ public class IntegerToRomanTest {
                 { 3, "III" },
                 { 4, "IV" },
                 { 58, "LVIII" },
+                { 1984, "MCMLXXXIV"},
                 { 3825, "MMMDCCCXXV" }
         };
     }
