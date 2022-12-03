@@ -4,12 +4,9 @@ import de.leetcode.util.Pair;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 public class IntegerToRoman {
-
 
 
     private final static List<Pair> MAP = new ArrayList<>();
@@ -46,8 +43,8 @@ public class IntegerToRoman {
                 }
                 else {
                     builder.append(StringUtils.repeat(romanNumber, rep));
-                    num -= (rep * i);
                 }
+                num -= (rep * i);
             }
         }
 
