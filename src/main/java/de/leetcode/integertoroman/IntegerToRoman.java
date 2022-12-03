@@ -44,9 +44,14 @@ public class IntegerToRoman {
                 final int rep = num / i;
 
                 if (rep > 3) {
-                    final Pair previousPair = MAP.get(j - 1);
-                    builder.append(romanNumber);
-                    builder.append(previousPair.letter());
+                    if (j == 0) {
+                        builder.append(StringUtils.repeat(romanNumber, rep));
+                    }
+                    else {
+                        final Pair previousPair = MAP.get(j - 1);
+                        builder.append(romanNumber);
+                        builder.append(previousPair.letter());
+                    }
                 } else {
                     builder.append(StringUtils.repeat(romanNumber, rep));
                 }

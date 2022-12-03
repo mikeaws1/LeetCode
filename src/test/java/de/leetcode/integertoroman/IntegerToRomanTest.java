@@ -14,7 +14,8 @@ public class IntegerToRomanTest {
                 {4, "IV"},
                 {58, "LVIII"},
                 {1984, "MCMLXXXIV"},
-                {3825, "MMMDCCCXXV"}
+                {3825, "MMMDCCCXXV"},
+                {8485, "MMMMMMMMCDLXXXV"}
         };
     }
 
