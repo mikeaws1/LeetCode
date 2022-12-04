@@ -7,17 +7,19 @@ public class SwapPairs {
 
     public ListNode swapPairs(ListNode head) {
 
+        if (head == null)
+            return null;
 
-        if (head == null) return null;
-        final ListNode tmp = head.next;
-        if (tmp == null) return null;
-        final ListNode tmpNext = tmp.next;
+        final ListNode next = head.next;
 
-        tmp.next = head;
-        head.next = tmpNext;
+        if (next == null)
+            return null;
 
+        final ListNode tmp = next.next;
 
-        swapPairs(tmpNext);
+        next.next = head;
+        head.next = tmp;
+        swapPairs(head);
 
         return tmp;
     }
