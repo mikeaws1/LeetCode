@@ -1,25 +1,15 @@
 package de.leetcode.util;
 
 
+import java.util.Arrays;
+
 public class ListNodeComparator {
 
     public static boolean compare(ListNode head, int[] values) {
-        boolean ret = true;
 
-        Integer[] ints = head.toArray();
+        int[] ints = head.toArray();
+        var v = Arrays.compare(ints, values);
 
-        if (ints.length != values.length) {
-            return false;
-        }
-
-        for (int i : values) {
-            ret &= (head.number == i);
-            head = head.next;
-
-            if (head == null) {
-                break;
-            }
-        }
-        return ret;
+        return v == 0;
     }
 }
