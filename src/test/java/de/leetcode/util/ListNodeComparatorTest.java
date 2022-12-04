@@ -16,4 +16,14 @@ class ListNodeComparatorTest {
 
     }
 
+    @Test
+    public void test_2() {
+        final int[] values = new int[] {3, 8, 19, 4, 222, 21};
+        final int[] wrongResult = new int[] {3, 8};
+        final ListNode list = Util.createList(values);
+
+        assertFalse(ListNodeComparator.compare(list, wrongResult));
+
+    }
+
 }

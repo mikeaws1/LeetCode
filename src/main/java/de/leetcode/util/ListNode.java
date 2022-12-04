@@ -1,5 +1,9 @@
 package de.leetcode.util;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class ListNode implements Comparable<ListNode> {
 
     public int number;
@@ -24,5 +28,17 @@ public class ListNode implements Comparable<ListNode> {
             return -1;
         }
         return 1;
+    }
+
+
+    public Integer[] toArray(List<Integer> integers) {
+
+        integers.add(this.number);
+        if (next != null) {
+            next.toArray(integers);
+        }
+        Integer[] values = integers.toArray(new Integer[0]);
+
+        return values;
     }
 }
