@@ -41,7 +41,7 @@ class SolutionTwoNumbersTest {
     private void assertResult(ListNode start, int[] result) {
 
         reverse(result);
-        assertEquals(0, ListNodeComparator.compare(start, result));
+        assertTrue(ListNodeComparator.compare(start, result));
     }
 
 }

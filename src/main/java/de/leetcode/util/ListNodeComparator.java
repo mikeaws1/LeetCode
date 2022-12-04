@@ -3,7 +3,7 @@ package de.leetcode.util;
 
 public class ListNodeComparator {
 
-    public static int compare(ListNode head, int[] values) {
+    public static boolean compare(ListNode head, int[] values) {
         int ret = 0;
 
         for (int i : values) {
@@ -15,6 +15,6 @@ public class ListNodeComparator {
                 break;
             }
         }
-        return ret;
+        return ret == 0;
     }
 }

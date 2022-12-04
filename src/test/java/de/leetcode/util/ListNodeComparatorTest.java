@@ -12,7 +12,7 @@ class ListNodeComparatorTest {
         final int[] values = new int[] {3, 8, 19, 4, 222, 21};
         final ListNode list = Util.createList(values);
 
-        assertEquals(0, ListNodeComparator.compare(list, values));
+        assertTrue(ListNodeComparator.compare(list, values));
 
     }
 

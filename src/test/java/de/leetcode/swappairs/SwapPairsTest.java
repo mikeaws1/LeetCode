@@ -5,7 +5,7 @@ import de.leetcode.util.ListNodeComparator;
 import org.junit.jupiter.api.Test;
 
 import static de.leetcode.util.Util.createList;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 class SwapPairsTest {
@@ -23,7 +23,7 @@ class SwapPairsTest {
         final ListNode input = createList(values);
         ListNode resultNodeList = swapPairs.swapPairs(input);
 
-        assertEquals(0, ListNodeComparator.compare(resultNodeList, result));
+        assertTrue(ListNodeComparator.compare(resultNodeList, result));
 
     }
 

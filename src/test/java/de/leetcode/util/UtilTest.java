@@ -1,6 +1,7 @@
 package de.leetcode.util;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,7 +22,7 @@ public class UtilTest {
 
         ListNode head =  Util.createList(values);
 
-        assertEquals(0, ListNodeComparator.compare(head, values) );
+        assertTrue(ListNodeComparator.compare(head, values));
     }
 
     //@ParameterizedTest
@@ -30,7 +31,7 @@ public class UtilTest {
 
         ListNode head =  Util.createListReverse(values);
 
-        assertEquals(0, ListNodeComparator.compare(head, values) );
+        assertTrue(ListNodeComparator.compare(head, values) );
     }
 
     @Test
