@@ -8,13 +8,7 @@ public class ListNodeComparator {
 
         for (int i : values) {
 
-            if (i == head.number) {
-                ret = 0;
-            } else if (i > head.number) {
-                ret = -1;
-            } else if (i < head.number) {
-                ret = 1;
-            }
+            ret = Integer.compare(head.number, i);
             head = head.next;
 
             if (head == null) {

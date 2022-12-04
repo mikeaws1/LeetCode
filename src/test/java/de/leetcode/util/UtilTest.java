@@ -14,11 +14,21 @@ public class UtilTest {
         return Stream.of(new int[]{1, 2, 3, 4, 5}, new int[]{1, 2, 3, 4});
     }
 
+
     @ParameterizedTest
     @MethodSource("getValues")
     public void test_listnode(int[] values) {
 
         ListNode head =  Util.createList(values);
+
+        assertEquals(0, ListNodeComparator.compare(head, values) );
+    }
+
+    //@ParameterizedTest
+    @MethodSource("getValuesReverse")
+    public void test_listnode_reverse(int[] values) {
+
+        ListNode head =  Util.createListReverse(values);
 
         assertEquals(0, ListNodeComparator.compare(head, values) );
     }
