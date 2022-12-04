@@ -15,13 +15,10 @@ public class Util {
 
     public static ListNode createListReverse(int[] values) {
 
-        final ListNode start = new ListNode(values[0]);
-        ListNode old = start;
+        ListNode old = new ListNode(values[0]);
 
         for (int i = 1; i < values.length; i++) {
-
-            ListNode node = new ListNode(values[i], old);
-            old = node;
+            old = new ListNode(values[i], old);
         }
 
         return old;
@@ -30,13 +27,10 @@ public class Util {
     public static ListNode createList(int[] values) {
 
         int l = values.length - 1;
-        final ListNode start = new ListNode(values[l]);
-        ListNode old = start;
+        ListNode old = new ListNode((values[l]));
 
         for (int i = l - 1; i >= 0; i--) {
-
-            ListNode node = new ListNode(values[i], old);
-            old = node;
+            old= new ListNode(values[i], old);
         }
 
         return old;
