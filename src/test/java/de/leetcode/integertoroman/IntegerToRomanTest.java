@@ -1,6 +1,11 @@
 package de.leetcode.integertoroman;
 
+import de.leetcode.util.Pair;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -8,24 +13,20 @@ public class IntegerToRomanTest {
 
     private final IntegerToRoman integerToRoman = new IntegerToRoman();
 
-    private Object[][] data() {
-        return new Object[][]{
-                {3, "III"},
-                {4, "IV"},
-                {58, "LVIII"},
-                {1984, "MCMLXXXIV"},
-                {3825, "MMMDCCCXXV"},
-                {8485, "MMMMMMMMCDLXXXV"}
-        };
+    static Stream<Pair> getValues() {
+        return Stream.of(
+                new Pair(3, "III"),
+                new Pair(4, "IV"),
+                new Pair(58, "LVIII"),
+                new Pair(1984, "MCMLXXXIV"),
+                new Pair(3825, "MMMDCCCXXV"),
+                new Pair(8485, "MMMMMMMMCDLXXXV"));
     }
 
-    @Test
-    public void testIntToRoman() {
-
-        for (Object[] o : data()) {
-
-            final String s = integerToRoman.intToRoman((Integer) o[0]);
-            assertEquals(o[1], s);
-        }
+    @ParameterizedTest
+    @MethodSource("getValues")
+    public void testIntToRoman(Pair p) {
+            final String s = integerToRoman.intToRoman(p.value());
+            assertEquals(p.letter(), s);
     }
 }

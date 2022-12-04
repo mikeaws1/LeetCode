@@ -1,6 +1,6 @@
 package de.leetcode.util;
 
-public class ListNode {
+public class ListNode implements Comparable<ListNode> {
 
     public int number;
     public ListNode next;
@@ -15,4 +15,14 @@ public class ListNode {
         this(value, null);
     }
 
+    @Override
+    public int compareTo(ListNode node) {
+        if (node.number == this.number) {
+            return 0;
+        }
+        if (node.number < this.number) {
+            return -1;
+        }
+        return 1;
+    }
 }
