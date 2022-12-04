@@ -14,13 +14,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class SwapPairsTest {
 
-    static Stream<ArrayPair<int[]>> generateValues() {
-        return Stream.of(new ArrayPair<>(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, new int[]{2, 1, 4, 3, 6, 5, 8, 7, 9}),
-                new ArrayPair<>(new int[]{7, 8, 1, 3}, new int[]{8, 7, 3, 1}));
-    }
-
     private final SwapPairs swapPairs = new SwapPairs();
 
+    static Stream<ArrayPair<int[]>> generateValues() {
+        return Stream.of(new ArrayPair<>(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, new int[]{2, 1, 4, 3, 6, 5, 8, 7, 9}),
+                new ArrayPair<>(new int[]{7, 8, 1, 3, 19, 82}, new int[]{8, 7, 3, 1, 82, 19}));
+    }
 
     @ParameterizedTest
     @MethodSource("generateValues")
