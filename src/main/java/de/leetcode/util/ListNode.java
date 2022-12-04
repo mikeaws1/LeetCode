@@ -1,7 +1,6 @@
 package de.leetcode.util;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ListNode implements Comparable<ListNode> {
@@ -30,8 +29,11 @@ public class ListNode implements Comparable<ListNode> {
         return 1;
     }
 
+    public Integer[] toArray() {
+        return toArray(new ArrayList<>());
+    }
 
-    public Integer[] toArray(List<Integer> integers) {
+    private Integer[] toArray(List<Integer> integers) {
 
         integers.add(this.number);
         if (next != null) {
